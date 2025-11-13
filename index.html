@@ -1,4 +1,649 @@
-<section id="fase1" class="fade-in">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RH Vinhal Advogados | Guia de Entrevista (Estágio)</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>document.documentElement.className = 'js';</script>
+
+    <style>
+        /* --- 1. Núcleo da Identidade Visual (Tokens V3) --- */
+        /* */
+        :root {
+            /* Paleta Principal */
+            --primary-bg: #06192a;      /* Azul Petróleo - Fundo principal */
+            --card-bg: #0A243D;         /* Azul Escuro - Fundo de cards */
+            --accent-color: #00e800;     /* Verde Vibrante - Destaques */
+            --danger-color: #ff4d4d;     /* Vermelho para alertas */
+            
+            /* Textos */
+            --text-primary: #ffffff;     /* Branco - Textos principais */
+            --text-muted: #cccccc;       /* Cinza Claro */
+            --text-subtle: #a0a0a0;       /* Cinza - Textos secundários */
+            
+            /* Bordas e Efeitos */
+            --border-color: rgba(255, 255, 255, 0.1);
+            --accent-glow: 0 0 8px rgba(0, 232, 0, 0.7);
+            
+            /* Tipografia (Famílias) */
+            --font-primary: 'Poppins', sans-serif;
+            --font-secondary: 'Merriweather', serif; /* Usado apenas em diagnósticos */
+
+            /* Tipografia (Tamanhos) */
+            --font-size-base: 1.1rem;
+            --font-size-h3: 1.5rem;
+            --font-size-h2: clamp(2rem, 4vw, 2.5rem);
+            --font-size-h1: clamp(2.5rem, 5vw, 3rem);
+
+            /* Espaçamento (Tokens V3) */
+            --space-sm: 1rem;   /* 16px */
+            --space-md: 2rem;   /* 32px */
+            --space-lg: 4rem;   /* 64px */
+            --space-xl: 6rem;   /* 96px */
+        }
+
+        /* --- 2. Estrutura e Layout (Padrão V3) --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            color: var(--text-primary);
+            background-color: var(--primary-bg);
+            /* Textura de fundo obrigatória com efeito paralaxe */
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-attachment: fixed;
+            line-height: 1.6;
+        }
+
+        /* --- 3. Ativos da Marca (Logos V3) --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: var(--space-sm) var(--space-md);
+            /* Efeito de vidro obrigatório */
+            background-color: rgba(6, 25, 42, 0.8); /* --primary-bg com 80% opacidade */
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-logo {
+            height: 48px;
+        }
+        
+        .header-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        main {
+            padding-top: calc(48px + (var(--space-sm) * 2)); /* Altura do header */
+            padding-bottom: var(--space-lg);
+        }
+
+        footer {
+            padding: var(--space-lg) var(--space-md);
+            text-align: center;
+            background-color: #000; /* Rodapé sempre preto */
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-logo {
+            height: 96px; 
+            margin-bottom: var(--space-sm);
+        }
+
+        footer p {
+            color: var(--text-subtle);
+            font-size: 0.9rem;
+        }
+
+        /* --- 4. Componentes (Card Padrão V3) --- */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        section {
+            padding-top: var(--space-lg);
+        }
+
+        .card {
+            /* Estilo de card padrão */
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: var(--space-md);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px); /* Padrão V3 */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Acessibilidade Obrigatória V3 */
+        .card:focus-visible,
+        button:focus-visible,
+        a:focus-visible {
+            outline: 3px solid var(--accent-color);
+            outline-offset: 4px;
+        }
+        
+        /* Bloco de código para prompt */
+        pre {
+            background: #000; 
+            padding: 1rem; 
+            border-radius: 8px; 
+            color: var(--text-muted); 
+            font-family: monospace; 
+            white-space: pre-wrap; /* Garante a quebra de linha */
+            margin-top: 1rem; 
+            border: 1px solid var(--border-color);
+            font-size: 0.9rem; /* Tamanho ajustado para prompt */
+            line-height: 1.5;
+        }
+
+
+        /* --- 5. Animações (Padrão V3) --- */
+        /* */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Classe inicial (aplicada apenas se JS estiver ativo) */
+        .js .fade-in {
+            opacity: 0;
+        }
+
+        /* Classe adicionada pelo JS */
+        .fade-in.is-visible {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        /* --- 6. Estilos de Conteúdo Específico (Esta Página) --- */
+
+        .hero-section {
+            text-align: center;
+            padding-bottom: 0;
+        }
+
+        h1 {
+            font-size: var(--font-size-h1);
+            color: var(--accent-color);
+            /* Efeito de brilho obrigatório V3 */
+            text-shadow: var(--accent-glow);
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+        }
+
+        h2 {
+            font-size: var(--font-size-h2);
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero-section p {
+            font-size: var(--font-size-base);
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        h3 {
+            font-size: var(--font-size-h3);
+            color: var(--accent-color); /* Uso estratégico de cor de destaque */
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            margin-top: var(--space-sm);
+        }
+        
+        h5 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: var(--space-md);
+            margin-bottom: var(--space-sm);
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            position: relative;
+            padding-left: 35px; /* Espaço para o ícone */
+            margin-bottom: var(--space-sm);
+            color: var(--text-subtle); /* Cor para parágrafos longos */
+            font-size: 1rem;
+            transition: background-color 0.2s ease;
+        }
+
+        /* Ícone de checklist */
+        li::before {
+            content: '\f00c'; /* Font Awesome check */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            top: 4px;
+            font-size: 1.1rem;
+        }
+        
+        li strong {
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+        
+        p {
+            color: var(--text-muted); /* */
+            margin-bottom: 1rem;
+        }
+
+        /* Estilo para blocos de "Avalie" */
+        .evaluation-point {
+            background-color: rgba(6, 25, 42, 0.5); /* --primary-bg com opacidade */
+            border: 1px dashed var(--border-color);
+            border-left: 4px solid var(--accent-color); /* Destaque */
+            padding: var(--space-sm);
+            margin-top: 0.5rem;
+            margin-left: -35px; /* Alinhar com o `li` pai */
+            border-radius: 8px;
+        }
+
+        .evaluation-point::before {
+            content: '\f06e'; /* Font Awesome eye */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--accent-color);
+            margin-right: 10px;
+        }
+
+        /* Correção para LIs dentro de .evaluation-point */
+        .evaluation-point ul {
+            margin-top: var(--space-sm);
+        }
+        
+        .evaluation-point li {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Mudar ícone de LIs aninhados */
+        .evaluation-point li::before {
+             content: '\f105'; /* Seta 'chevron-right' */
+             font-size: 1rem;
+             top: 6px;
+        }
+
+        /* --- 7. Estilos de Abas (Tabs) --- */
+        .tab-container {
+            width: 100%;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden; /* Para conter as bordas arredondadas */
+        }
+        
+        .tab-buttons {
+            display: flex;
+            flex-wrap: wrap; /* Permite quebra de linha em telas pequenas */
+            background-color: var(--primary-bg);
+            border-bottom: 2px solid var(--border-color);
+            position: sticky; 
+            top: 0;
+            z-index: 10;
+        }
+
+        .tab-button {
+            padding: 1rem 1.25rem;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            color: var(--text-subtle);
+            font-family: var(--font-primary);
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: color 0.3s ease, background-color 0.3s ease, border-bottom 0.3s ease;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px; /* Alinha com a borda inferior do container */
+        }
+        
+        .tab-button i {
+            margin-right: 8px;
+        }
+        
+        /* Ajuste responsivo para os botões das abas */
+        @media (max-width: 768px) {
+            .tab-button {
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        .tab-button:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+        }
+        
+        .tab-button:focus-visible {
+             /* Acessibilidade Obrigatória V3 */
+            outline: 3px solid var(--accent-color);
+            outline-offset: -3px;
+            z-index: 10;
+        }
+
+        .tab-button.active {
+            color: var(--accent-color);
+            border-bottom: 3px solid var(--accent-color);
+            text-shadow: var(--accent-glow);
+        }
+
+        .tab-content {
+            padding: var(--space-md);
+            display: none; /* Escondido por padrão */
+            animation: fadeIn 0.5s ease; /* Animação ao trocar de aba */
+            max-height: 80vh; /* Altura máxima para o conteúdo da aba */
+            overflow-y: auto; /* Adiciona scroll se o conteúdo for muito grande */
+        }
+        
+        .tab-content.active {
+            display: block; /* Visível quando ativo */
+        }
+        
+        /* --- 8. Estilos de Conteúdo das Abas (Novo) --- */
+        .tab-content-full {
+             /* Estilos para o conteúdo colado do manual */
+        }
+        
+        .tab-content-full p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        
+        .tab-content-full h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: var(--space-md);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .tab-content-full h5 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: var(--space-md);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .tab-content-full strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        .tab-content-full em {
+            color: var(--accent-color);
+            font-style: italic;
+        }
+        
+        .tab-content-full ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: var(--space-sm);
+        }
+        
+        .tab-content-full ul li {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            padding-left: 35px;
+        }
+
+        .tab-content-full ul li::before {
+            content: '\f105'; /* Seta 'chevron-right' */
+            color: var(--accent-color);
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 4px;
+            font-size: 1.1rem;
+        }
+        
+        /* Estilo para checklists [ ] */
+        .tab-content-full ul li i.fa-square,
+        .tab-content-full ul li i.fa-check-square,
+        .tab-content-full ul li i.fa-regular {
+            color: var(--accent-color);
+            margin-right: 10px;
+            font-size: 1.1rem;
+            position: absolute;
+            left: 0;
+            top: 4px;
+        }
+        
+        .tab-content-full ul.checklist li::before {
+             /* Remove o ícone duplicado se a classe checklist for usada */
+            content: ''; 
+        }
+
+        
+        .tab-content-full ol {
+            list-style: none; /* Removemos o padrão */
+            padding-left: 0;
+            margin-top: var(--space-sm);
+            counter-reset: item; /* Inicia o contador */
+        }
+        
+        .tab-content-full ol li {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            padding-left: 35px;
+        }
+        
+        .tab-content-full ol li::before {
+            content: counter(item) "."; /* Adiciona o número */
+            counter-increment: item; /* Incrementa o contador */
+            color: var(--accent-color);
+            font-weight: 700;
+            position: absolute;
+            left: 0;
+            top: 0px;
+            font-size: 1.1rem;
+        }
+
+        .tab-content-full hr {
+            border: 0;
+            height: 1px;
+            background-color: var(--border-color);
+            margin: var(--space-md) 0;
+        }
+        
+        /* Tabela */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            table-layout: fixed; /* Ajuda na responsividade */
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 0.75rem 1rem;
+            text-align: left;
+            color: var(--text-subtle);
+            word-wrap: break-word; /* Quebra palavras longas */
+        }
+
+        th {
+            background-color: rgba(0, 232, 0, 0.1); /* Fundo verde transparente */
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: rgba(0, 0, 0, 0.1); /* Zebrado sutil */
+        }
+        
+
+        /* Estilos para o fluxo */
+        .fluxo-card li strong {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+        
+        .fluxo-card li::before {
+            content: '\f271'; /* 'calendar-check' */
+        }
+        
+        .fluxo-card ul ul li::before {
+             content: '\f105'; /* Seta 'chevron-right' */
+        }
+        
+        .fluxo-card .check-item::before {
+             content: '\f00c'; /* check */
+             font-size: 1rem;
+             top: 6px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://raw.githubusercontent.com/Clebito2/layout/main/Logo%20live%20oficial-36.png" 
+             alt="Logo Live Consultoria" 
+             class="header-logo" 
+             loading="lazy">
+        <span class="header-title">Projeto Vinhal Advogados</span>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <section class="hero-section fade-in">
+                <h1>RH Vinhal Advogados</h1>
+                <h2>Guia de Seleção: Estágio Jurídico</h2>
+                <p>Um guia passo-a-passo para padronizar a seleção, desde o anúncio da vaga até a entrevista, garantindo a contratação do perfil ideal (Foco em Processual Civil).</p>
+            </section>
+
+            <section id="fase0" class="fade-in">
+                <h3>Fase 0: O Anúncio (O Primeiro Filtro)</h3>
+                <p style="color: var(--text-muted); margin-bottom: var(--space-sm);">Um anúncio claro é a ferramenta mais importante para economizar tempo. Ele deve atrair os candidatos certos e repelir os desalinhados.</p>
+                
+                <div class="tab-container">
+                    <div class="tab-buttons">
+                        <button class="tab-button active" onclick="openTab(event, 'tab-analise-anuncio')"><i class="fa-solid fa-search"></i> Análise da Vaga Atual</button>
+                        <button class="tab-button" onclick="openTab(event, 'tab-modelo-anuncio')"><i class="fa-solid fa-check-double"></i> Modelo Otimizado</button>
+                    </div>
+
+                    <div id="tab-analise-anuncio" class="tab-content active tab-content-full">
+                        <h4>Análise (Baseado no Manual de Vagas)</h4>
+                        <p>A vaga atual (imagem) é direta, mas falha em pontos cruciais que aumentam o volume de currículos desalinhados:</p>
+                        <ul>
+                            <li><strong>Título Genérico ("VAGA PARA ESTÁGIO"):</strong> Não atrai quem busca a área específica (Processual Civil) e não funciona bem em buscas (SEO).</li>
+                            <li><strong>Não "Vende" o Escritório:</strong> Não explica por que um ótimo estudante deveria escolher o Vinhal Advogados em vez de outro.</li>
+                            <li><strong>Perfil Comportamental Misto:</strong> Mistura requisitos técnicos (5º período) com comportamentais (organização) sem dar o devido destaque. "Atenção a detalhes", crucial para a área, não é mencionada.</li>
+                            <li><strong>Linguagem Masculina ("estagiário"):</strong> Pode (inconscientemente) desencorajar candidatas mulheres, reduzindo o pool de talentos.</li>
+                            <li><strong>Falta de Processo:</strong> Não informa as etapas, gerando ansiedade e falta de profissionalismo percebido.</li>
+                        </ul>
+                    </div>
+
+                    <div id="tab-modelo-anuncio" class="tab-content tab-content-full">
+                        <h4>Modelo de Anúncio Otimizado</h4>
+                        <p>Use este modelo como base para publicar a vaga. Ele já filtra os candidatos pelo interesse e perfil corretos.</p>
+                        
+                        <div class="card" style="background-color: var(--primary-bg); border-left: 3px solid var(--accent-color);">
+                            <p><strong>Título:</strong> Vaga de Estágio em Direito (Foco em Processual Civil)<br>
+                               <strong>Local:</strong> Setor Marista, Goiânia (Presencial)</p>
+                            
+                            <h5>Sobre Nós:</h5>
+                            <p>Somos um escritório jurídico com atuação especializada em Direito Processual Civil. Valorizamos um ambiente de aprendizado intenso e mentoria prática, buscando desenvolver novos talentos que tenham sede de crescer na advocacia contenciosa.</p>
+
+                            <h5>Suas Principais Atividades (O dia a dia):</h5>
+                            <ul>
+                                <li>Apoio na condução de processos de execução de títulos de crédito.</li>
+                                <li>Emissão e controle de guias processuais de pagamento.</li>
+                                <li>Acompanhamento rigoroso de prazos e movimentações processuais.</li>
+                                <li>Suporte à equipe jurídica em rotinas do contencioso cível.</li>
+                            </ul>
+
+                            <h5>O que Oferecemos (Condições):</h5>
+                            <ul>
+                                <li>Bolsa-auxílio: R$ 1.000,00</li>
+                                <li>Auxílio Transporte (VT)</li>
+                                <li>Horário: 13h às 18h (5h/dia)</li>
+                                <li>Oportunidade real de aprendizado e contato direto com casos complexos.</li>
+                            </ul>
+
+                            <h5>O que Buscamos (Requisitos):</h5>
+                            <ul>
+                                <li><strong>Obrigatório:</strong> Estar cursando Direito a partir do 5º período.</li>
+                                <li><strong>Perfil Comportamental:</strong>
+                                    <ul>
+                                        <li>Interesse claro e demonstrável por Direito Processual Civil e Execução.</li>
+                                        <li>Excelente redação e comunicação verbal.</li>
+                                        <li>Alto nível de organização e <strong>atenção minuciosa a detalhes</strong> (crucial para prazos).</li>
+                                        <li>Proatividade, comprometimento e rápida capacidade de aprendizado.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            
+                            <h5>Nosso Processo Seletivo:</h5>
+                            <ol>
+                                <li>Análise de currículo.</li>
+                                <li>Teste prático de redação (online).</li>
+                                <li>Entrevista com a Controladoria.</li>
+                                <li>Entrevista final com Sócio(a).</li>
+                            </ol>
+                            
+                            <h5>Como se candidatar:</h5>
+                            <p>Envie seu currículo para: <strong>controladoria@vinhaladvogados.com.br</strong><br>
+                               Assunto: <strong>Vaga de Estágio – [Seu nome completo]</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="fase1" class="fade-in">
                 <h3>Fase 1: Preparação (Antes da Entrevista)</h3>
                 <div class="card">
                     <ul>
@@ -9,7 +654,7 @@
                             <div class="evaluation-point" style="margin-left: 0; border-left-width: 4px; border-style: dashed; margin-top: 1rem;">
                                 <strong><i class="fa-solid fa-robot" style="margin-right: 8px;"></i>Prompt Sugerido para a IA:</strong>
                                 
-                                <pre style="background: #000; padding: 1rem; border-radius: 8px; color: var(--text-muted); font-family: monospace; white-space: pre-wrap; margin-top: 1rem; border: 1px solid var(--border-color);">
+                                <pre>
 Atue como um recrutador sênior especializado em vagas jurídicas, com foco em escritórios de advocacia.
 
 Estou contratando para uma vaga de 'Estágio em Direito (Foco em Processual Civil)'. Anexei os currículos dos candidatos.
@@ -53,3 +698,385 @@ Sua tarefa:
                     </ul>
                 </div>
             </section>
+
+            <section id="fase2" class="fade-in">
+                <h3>Fase 2: Condução da Entrevista (45 min)</h3>
+                <div class="card">
+                    <ul>
+                        <li>
+                            <strong>Abertura e Rapport (5 min):</strong> Apresente-se, quebre o gelo e explique a estrutura da entrevista (conversa, um breve teste prático e espaço para dúvidas).
+                        </li>
+                        <li>
+                            <strong>Motivação e Interesse (10 min):</strong>
+                            <div class="evaluation-point">
+                                <strong>Avalie:</strong> Foque nas perguntas (do Banco):
+                                <ul>
+                                    <li>"Por que você se interessou por esta vaga no Vinhal Advogados?"</li>
+                                    <li>"O que mais lhe atrai sobre Direito Processual Civil e Execução?"</li>
+                                    <li><em>Verifique se há interesse genuíno na área ou se é apenas "qualquer estágio".</em></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>Avaliação Comportamental (20 min):</strong> Este é o núcleo. Faça as perguntas situacionais que você pré-selecionou (veja o Banco de Perguntas).
+                            <br><br><strong>Sugestões Obrigatórias (Adaptadas):</strong>
+                            <ul>
+                                <li>"Na faculdade, como você organiza suas diferentes tarefas e controla os prazos...?" (Avalia Organização)</li>
+                                <li>"Conte sobre um trabalho acadêmico ou matéria que achou extremamente difícil..." (Avalia Resiliência)</li>
+                                <li>"Quando você precisa fazer uma tarefa e não tem ideia por onde começar, qual é o seu primeiro passo?" (Avalia Proatividade)</li>
+                            </ul>
+                        </li>
+                         <li>
+                            <strong>Teste Prático Rápido (5-10 min):</strong> Substitua a "venda" por um teste de habilidade essencial.
+                            <br><br>
+                            <strong>Ação:</strong> Entregue ao candidato uma cópia de um <strong>andamento processual</strong> simples (despacho ou decisão curta).
+                            <br>
+                            <strong>Comando:</strong> "Leia este andamento, por favor. Em seguida, me explique com suas palavras o que você entendeu e qual seria o próximo passo."
+                            <div class="evaluation-point">
+                                <strong>Avalie:</strong> Clareza de raciocínio, capacidade de interpretação e (principalmente) <strong>habilidade de comunicação</strong> (se é objetivo ou confuso).
+                            </div>
+                        </li>
+                        <li>
+                            <strong>Fechamento (5 min):</strong> Pergunte se o candidato tem dúvidas (sobre o escritório, a vaga, a equipe). Explique claramente os próximos passos.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="fase3" class="fade-in">
+                <h3>Fase 3: Avaliação (Imediata)</h3>
+                <div class="card">
+                    <ul>
+                        <li>
+                            <strong>Preenchimento Imediato:</strong> Preencha a "Ficha de Avaliação (Estágio)" *imediatamente* após o candidato sair, enquanto os detalhes estão frescos na memória.
+                        </li>
+                        <li>
+                            <strong>Atribua Notas (1-5):</strong> Seja objetivo ao pontuar cada competência (Redação, Organização, Atenção a Detalhes, etc.).
+                        </li>
+                        <li>
+                            <strong>Parecer Final:</strong> Escreva suas observações gerais e marque seu parecer (Recomendado, Recomendado com ressalvas, Não recomendado).
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section id="fase4" class="fade-in">
+                <h3>Fase 4: Etapa Prática (Para Aprovados)</h3>
+                <div class="card">
+                    <ul>
+                        <li>
+                            <strong>Agendamento:</strong> Agende um "Teste de Rotina Jurídica" (30-45 min) com os candidatos que tiveram parecer "Recomendado" na Fase 3.
+                        </li>
+                        <li>
+                            <strong>Envolva o Gestor:</strong> Esta etapa <strong>deve</strong> ser conduzida ou supervisionada pelo(a) Advogado(a) Gestor(a) ou Sênior da área.
+                        </li>
+                        <li>
+                            <strong>Teste de Rotina:</strong> Entregue um cenário simples e peça para executar tarefas da vaga (simuladas).
+                            <br>
+                            <strong>Exemplo:</strong> "Com base nesta decisão (documento), emita a guia de custas processuais no site do Tribunal e identifique o prazo final para o pagamento."
+                        </li>
+                        <li>
+                            <strong>Avalie a "Coachability" (Capacidade de Aprender):</strong> Dê um feedback rápido (ex: "Você selecionou o código errado da guia, o correto seria este..."). Peça para ele refazer.
+                             <div class="evaluation-point">
+                                <strong>Avalie:</strong> O quão rápido o candidato absorve e aplica o feedback, e se reage defensivamente ou com abertura. Esta é a métrica mais importante para um estagiário.
+                             </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="ferramentas" class="fade-in">
+                <h3>Documentos Operacionais (Kit de Ferramentas)</h3>
+                <p style="color: var(--text-muted); margin-bottom: var(--space-sm);">✅ <strong>DOCUMENTOS ADAPTADOS.</strong><br>Abaixo estão as ferramentas essenciais para este processo seletivo.</p>
+                
+                <div class="tab-container">
+                    <div class="tab-buttons">
+                        <button class="tab-button active" onclick="openTab(event, 'tab-ficha')"><i class="fa-solid fa-tasks"></i> Ficha de Avaliação (Estágio)</button>
+                        <button class="tab-button" onclick="openTab(event, 'tab-perguntas')"><i class="fa-solid fa-clipboard-question"></i> Banco de Perguntas (Estágio)</button>
+                        <button class="tab-button" onclick="openTab(event, 'tab-perfil')"><i class="fa-solid fa-brain"></i> Análise de Perfil Ideal</button>
+                    </div>
+
+                    <div id="tab-ficha" class="tab-content active tab-content-full">
+                        <p>A avaliação deve ser baseada em critérios objetivos e padronizados para garantir justiça e comparabilidade.</p>
+                        
+                        <h4>Estrutura da Ficha de Avaliação (Estágio Jurídico)</h4>
+                        <p>A ficha deve ser preenchida pelo entrevistador <strong>imediatamente</strong> após a saída do candidato.</p>
+                        
+                        <h5>Parte 1: Dados do Candidato</h5>
+                        <ul>
+                            <li>Nome Completo:</li>
+                            <li>Vaga: Estágio em Direito (Proc. Civil)</li>
+                            <li>Data da Entrevista:</li>
+                            <li>Entrevistador(a):</li>
+                            <li>Fonte da Vaga (ex: Indicação, Site, LinkedIn):</li>
+                        </ul>
+
+                        <h5>Parte 2: Avaliação de Competências (Peso 60%)</h5>
+                        <p>Use uma escala de 1 a 5, onde:</p>
+                        <ul>
+                            <li><strong>1:</strong> Insatisfatório (Não demonstrou)</li>
+                            <li><strong>2:</strong> Abaixo do esperado</li>
+                            <li><strong>3:</strong> Atende ao esperado</li>
+                            <li><strong>4:</strong> Acima do esperado (Demonstrou com clareza)</li>
+                            <li><strong>5:</strong> Excepcional</li>
+                        </ul>
+                        
+                        <p><strong>A. Competências Comportamentais (Peso 40%)</strong></p>
+                        <ol>
+                            <li><strong>Comunicação (Escrita e Verbal):</strong> Clareza, objetividade, gramática, escuta ativa. (Nota: __/5)</li>
+                            <li><strong>Organização:</strong> Gestão do tempo, método para controlar tarefas. (Nota: __/5)</li>
+                            <li><strong>Atenção a Detalhes:</strong> Minúcia ao analisar documentos e prazos. (Nota: __/5)</li>
+                            <li><strong>Proatividade / Vontade de Aprender:</strong> Iniciativa, curiosidade. (Nota: __/5)</li>
+                            <li><strong>Resiliência / Comprometimento:</strong> Lida com tarefas complexas ou repetitivas. (Nota: __/5)</li>
+                            <li><strong>Trabalho em Equipe:</strong> Disposição para colaborar e receber ordens. (Nota: __/5)</li>
+                            <li><strong>Ética e Postura:</strong> Discrição, responsabilidade. (Nota: __/5)</li>
+                        </ol>
+                        
+                        <p><strong>B. Competências Técnicas (Peso 20%)</strong></p>
+                        <ol>
+                            <li><strong>Conhecimento (Processo Civil):</strong> Entende conceitos básicos da faculdade? (Nota: __/5)</li>
+                            <li><strong>Capacidade Analítica:</strong> Habilidade de interpretar o andamento (teste prático). (Nota: __/5)</li>
+                            <li><strong>Familiaridade (Sistemas):</strong> Já utilizou PJE, Projudi ou similar? (Nota: __/5)</li>
+                        </ol>
+
+                        <h5>Parte 3: Avaliação de Testes e Dinâmicas (Peso 30%)</h5>
+                        <ol>
+                            <li><strong>Teste Prático (Análise de Andamento):</strong> Performance na simulação da Fase 2. (Nota: __/5)</li>
+                            <li><strong>Coachability (Fase 4):</strong> Capacidade de absorver e aplicar feedback no teste. (Nota: __/5)</li>
+                            <li><strong>(Opcional) Teste de Redação:</strong> Nota em teste específico. (Nota: __/5)</li>
+                        </ol>
+
+                        <h5>Parte 4: Alinhamento e Observações (Peso 10%)</h5>
+                        <ol>
+                            <li><strong>Alinhamento Cultural:</strong> "Fit" com o ritmo e valores do escritório. (Nota: __/5)</li>
+                            <li><strong>Disponibilidade:</strong> Horários, período (5º+), etc. (Nota: __/5)</li>
+                        </ol>
+
+                        <h5>Parte 5: Parecer do Entrevistador</h5>
+                        <p><strong>Pontos Fortes Observados:</strong></p>
+                        <p>________________________________________________________________</p>
+                        
+                        <p><strong>Pontos de Atenção (Red Flags):</strong></p>
+                        <p>________________________________________________________________</p>
+
+                        <p><strong>Parecer Final:</strong></p>
+                        <ul class="checklist">
+                            <li><i class="fa-regular fa-square"></i> <strong>Aprovado para a Fase 4 (Prática)</strong></li>
+                            <li><i class="fa-regular fa-square"></i> <strong>Aprovado com Ressalvas (Listar):</strong> ______________________</li>
+                            <li><i class="fa-regular fa-square"></i> <strong>Reprovado</strong></li>
+                            <li><i class="fa-regular fa-square"></i> <strong>Manter em Banco de Talentos</strong></li>
+                        </ul>
+                    </div>
+
+                    <div id="tab-perguntas" class="tab-content tab-content-full">
+                        <p>Use este banco para conduzir a entrevista estruturada (Fase 2). Selecione 1 ou 2 perguntas de cada bloco.</p>
+
+                        <h4>Bloco 1: Motivação e Interesse</h4>
+                        
+                        <p><strong>1. O que te atraiu nesta vaga de estágio no Vinhal Advogados?</strong></p>
+                        <ul>
+                            <li><strong>Objetivo:</strong> Avaliar a motivação e se o candidato pesquisou o escritório.</li>
+                            <li><strong>Observar:</strong> Respostas que conectam o escritório à área de Processo Civil são um "Green Flag". Respostas genéricas ("preciso de um estágio") são um "Red Flag".</li>
+                        </ul>
+
+                        <p><strong>2. O que mais lhe atrai (ou o que você entende) sobre Direito Processual Civil e Execução?</strong></p>
+                        <ul>
+                            <li><strong>Objetivo:</strong> Medir o interesse real na área.</li>
+                            <li><strong>Observar:</strong> Não se espera um mestre, mas sim curiosidade. Se o candidato demonstra paixão pela área (mesmo que teórica), é um ótimo sinal.</li>
+                        </ul>
+
+                        <h4>Bloco 2: Competências Comportamentais (Técnica STAR)</h4>
+                        <p><em>Instrução: Sempre peça exemplos reais (STAR: Situação, Tarefa, Ação, Resultado).</em></p>
+
+                        <p><strong>3. (Para avaliar Organização e Atenção a Detalhes)</strong><br>
+                           Na faculdade, como você organiza suas diferentes tarefas e controla os prazos de trabalhos e provas? Já aconteceu de quase perder um prazo? Como lidou?</p>
+                        <ul>
+                            <li><strong>Observar:</strong> Se ele tem um <strong>método</strong> (agenda, app, planner) ou se é "caótico". A forma como lidou com o erro (se assumiu a responsabilidade ou culpou outros) é crucial.</li>
+                        </ul>
+
+                        <p><strong>4. (Para avaliar Resiliência e Comprometimento)</strong><br>
+                           Conte sobre um trabalho acadêmico ou uma matéria que você achou extremamente difícil ou complexa. Qual foi sua abordagem para conseguir ser aprovado(a)?</p>
+                        <ul>
+                            <li><strong>Observar:</strong> Foco na solução, busca por ajuda (colegas, monitoria), persistência. Evitar candidatos que culpam o professor ou desistem fácil.</li>
+                        </ul>
+
+                        <p><strong>5. (Para avaliar Proatividade e "Vontade de Aprender")</strong><br>
+                           Quando você precisa fazer uma tarefa (na faculdade ou na vida) e não tem ideia de por onde começar, qual é o seu primeiro passo?</p>
+                        <ul>
+                            <li><strong>Observar:</strong> O candidato ideal tenta resolver sozinho primeiro (Google, livros, pesquisa) antes de pedir ajuda. O candidato ruim paralisa ou pede a resposta pronta imediatamente.</li>
+                        </ul>
+
+                        <h4>Bloco 3: Fechamento</h4>
+                        <p><strong>6. Você tem alguma pergunta para mim sobre a vaga, a equipe ou o escritório?</strong></p>
+                        <ul>
+                            <li><strong>Observar:</strong> "Green Flag" para perguntas sobre o dia a dia, desafios, oportunidades de aprendizado. "Red Flag" para perguntas focadas apenas em férias, folgas ou "posso sair mais cedo".</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="tab-perfil" class="tab-content tab-content-full">
+                        <h3><i class="fa-solid fa-brain"></i> Análise de Perfil Ideal (Estágio)</h3>
+                        <p>A contratação de um estagiário é 99% focada em <strong>comportamento (Soft Skills)</strong> e 1% em <strong>técnica (Hard Skills)</strong>. A técnica (mexer no PJE, emitir guias) pode ser ensinada em dias. O comportamento (ser organizado, ser proativo) não.</p>
+                        
+                        <p>Concentre-se em identificar estas 4 competências-chave:</p>
+                        
+                        <div style="overflow-x: auto;">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Competência Avaliada</th>
+                                        <th>Exemplo de Pergunta (do Banco)</th>
+                                        <th>O que você deve avaliar (Green Flags ✅)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>1. Organização</strong></td>
+                                        <td>"Como você organiza suas tarefas e prazos...?"</td>
+                                        <td>Demonstra ter um <strong>método</strong> claro (agenda, app, checklist). Não se perde, fala com clareza sobre prioridades.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>2. Atenção a Detalhes</strong></td>
+                                        <td>(Teste Prático do Andamento)</td>
+                                        <td>É <strong>minucioso</strong>. Lê o documento com calma. Percebe o prazo? Identifica a parte correta? Não tenta "chutar" a resposta.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>3. Proatividade / Coachability</strong></td>
+                                        <td>"O que faz quando não sabe...?" / (Teste da Fase 4)</td>
+                                        <td>Busca aprender sozinho primeiro (Google, lei), depois pergunta. Ouve o feedback <strong>sem se justificar</strong> e aplica a correção imediatamente.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>4. Resiliência / Maturidade</strong></td>
+                                        <td>"Conte sobre uma matéria difícil..."</td>
+                                        <td>Não desiste fácil. <strong>Assume a responsabilidade</strong> pelos próprios resultados (não culpa professores ou colegas). Foca na solução.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <hr>
+                        <p><strong>Resumo da Análise:</strong> O currículo e o histórico escolar (Hard Skills) são os <strong>tijolos</strong>. O perfil comportamental (Soft Skills) é a <strong>fundação</strong>. Para a rotina de Processo Civil, um candidato "Nota 7" com uma fundação (Organização + Atenção a Detalhes) sólida vale mais que um "Nota 10" caótico e sem método.</p>
+                    </div>
+
+                </div>
+            </section>
+            
+            <section id="fluxo" class="fade-in">
+                <h3>Como Usar Tudo Junto (Fluxo Completo)</h3>
+                <div class="card fluxo-card">
+                    <h4>🎯 COMO USAR TUDO JUNTO</h4>
+                    <br>
+                    <ul>
+                        <li>
+                            <strong>Antes da Entrevista:</strong>
+                            <ul>
+                                <li>Revise o "Modelo Otimizado" (Fase 0) e garanta que a vaga foi bem divulgada.</li>
+                                <li>Use o prompt da Fase 1 para pré-selecionar currículos.</li>
+                                <li>Leia o "Banco de Perguntas" e a "Análise de Perfil Ideal".</li>
+                                <li>Imprima a "Ficha de Avaliação (Estágio)".</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>No Dia da Entrevista:</strong>
+                             <ul>
+                                <li>Siga o roteiro da Fase 2 (Condução).</li>
+                                <li>Realize o "Teste Prático Rápido" (do andamento).</li>
+                                <li>Feche com profissionalismo.
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Pós-Entrevista:</strong>
+                             <ul>
+                                <li>Preencha a "Ficha de Avaliação" <strong>imediatamente</strong>.</li>
+                                <li>Compare as pontuações dos candidatos.</li>
+                                <li>Agende a Fase 4 (Teste Prático) com os aprovados.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <br>
+                    <h4>💼 TODOS PRONTOS PARA USAR HOJE</h4>
+                    <p>Cada documento está:</p>
+                    <ul>
+                        <li class="check-item">✅ Estruturado e pronto</li>
+                        <li class="check-item">✅ Com exemplos práticos</li>
+                        <li class="check-item">✅ Fácil de imprimir (use as Fichas)</li>
+                        <li class="check-item">✅ Customizado para a vaga</li>
+                    </ul>
+                    <br>
+                    <p><strong>Você tem em mãos um sistema profissional de seleção de talentos que pode começar a usar AGORA.</strong></p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <img src="https://raw.githubusercontent.com/Clebito2/layout/main/Logo%20live%20oficial-34.png" 
+             alt="Live Consultoria" 
+             class="footer-logo" 
+             loading="lazy"
+             onerror="this.onerror=null; this.src='https://placehold.co/96x96/000000/a0a0a0?text=Live+Logo'">
+        <p>Live Consultoria Empresarial</p>
+        <p>Transformando Potencial em Performance.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Script de Animação Fade-in ---
+            if (document.documentElement.classList.contains('js')) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1 // Ativa quando 10% do elemento está visível
+                });
+
+                const targets = document.querySelectorAll('.fade-in');
+                targets.forEach(target => {
+                    observer.observe(target);
+                });
+            }
+        });
+        
+        // --- Script das Abas (Tabs) ---
+        function openTab(evt, tabName) {
+            // Declarar variáveis
+            var i, tabcontent, tablinks;
+
+            // Encontrar o container pai das abas
+            var tabContainer = evt.currentTarget.closest('.tab-container');
+            
+            // Pegar todos os elementos com class="tab-content" DENTRO desse container e escondê-los
+            tabcontent = tabContainer.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+
+            // Pegar todos os elementos com class="tab-button" DENTRO desse container e remover a classe "active"
+            tablinks = tabContainer.getElementsByClassName("tab-button");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+
+            // Mostrar a aba atual e adicionar a classe "active" ao botão que abriu a aba
+            tabContainer.querySelector('#' + tabName).style.display = "block";
+            tabContainer.querySelector('#' + tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+        
+        // Abrir a primeira aba de CADA container por padrão
+        document.addEventListener('DOMContentLoaded', function() {
+             document.querySelectorAll('.tab-container').forEach(container => {
+                var firstButton = container.querySelector('.tab-button');
+                if (firstButton) {
+                    firstButton.click();
+                }
+             });
+        });
+    </script>
+
+</body>
+</html>
