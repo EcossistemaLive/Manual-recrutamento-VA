@@ -748,7 +748,7 @@ Sua tarefa:
                 <div class="card">
                     <ul>
                         <li>
-                            <strong>Preenchimento Imediato:</strong> Preencha a "Ficha de Avaliação (Estágio)" *imediatamente* após o candidato sair, enquanto os detalhes estão frescos na memória.
+                            <strong>Preenchimento Imediato:</strong> Preencha a "Ficha de Avaliação (Estágio)" <strong>imediatamente</strong> após o candidato sair, enquanto os detalhes estão frescos na memória.
                         </li>
                         <li>
                             <strong>Atribua Notas (1-5):</strong> Seja objetivo ao pontuar cada competência (Redação, Organização, Atenção a Detalhes, etc.).
@@ -757,7 +757,49 @@ Sua tarefa:
                             <strong>Parecer Final:</strong> Escreva suas observações gerais e marque seu parecer (Recomendado, Recomendado com ressalvas, Não recomendado).
                         </li>
                     </ul>
-                </div>
+
+                    <div class="evaluation-point" style="margin-left: 0; border-left-width: 4px; border-style: dashed; margin-top: 1.5rem;">
+                        <strong><i class="fa-solid fa-robot" style="margin-right: 8px;"></i>Automação da Fase 3 com IA (Opcional):</strong>
+                        <p style="color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 0.5rem;">Use suas anotações brutas da entrevista para gerar uma avaliação estruturada. Copie suas notas e cole-as abaixo do prompt a seguir:</p>
+                        
+                        <pre>
+Atue como um recrutador sênior e analista comportamental.
+
+Acabei de realizar a Fase 2 de uma entrevista para 'Estágio em Direito (Proc. Civil)'. Minhas anotações brutas sobre o candidato estão coladas abaixo.
+
+Sua tarefa é usar minhas anotações para preencher a 'Ficha de Avaliação (Estágio)', seguindo esta estrutura:
+
+1.  **Avaliação de Competências (Nota 1-5):**
+    * **Comunicação (Escrita/Verbal):** [Nota __/5] - (Justificativa baseada nas notas)
+    * **Organização:** [Nota __/5] - (Justificativa)
+    * **Atenção a Detalhes:** [Nota __/5] - (Justificativa)
+    * **Proatividade / Vontade de Aprender:** [Nota __/5] - (Justificativa)
+    * **Resiliência / Comprometimento:** [Nota __/5] - (Justificativa)
+    * **Trabalho em Equipe:** [Nota __/5] - (Justificativa)
+    * **Ética e Postura:** [Nota __/5] - (Justificativa)
+    * **Conhecimento (Processo Civil):** [Nota __/5] - (Justificativa)
+    * **Capacidade Analítica (Teste Prático):** [Nota __/5] - (Justificativa)
+    * **Alinhamento Cultural:** [Nota __/5] - (Justificativa)
+    * **Disponibilidade:** [Nota __/5] - (Justificativa)
+
+2.  **Parecer do Entrevistador:**
+    * **Pontos Fortes Observados:** (Liste 3-5 pontos)
+    * **Pontos de Atenção (Red Flags):** (Liste 1-3 pontos)
+    * **Parecer Final:** [Aprovado para Fase 4 | Aprovado com Ressalvas | Reprovado]
+
+---
+MINHAS ANOTAÇÕES BRUTAS:
+[Cole suas anotações aqui]
+</pre>
+                        
+                        <h5 style="margin-top: 1.5rem; margin-bottom: 0.5rem; color: var(--text-primary);">Como usar este prompt:</h5>
+                        <ul style="margin-top: 0.5rem;">
+                            <li>Logo após a entrevista (Fase 2), transcreva ou copie suas anotações (mesmo que bagunçadas).</li>
+                            <li>Cole as anotações no local indicado `[Cole suas anotações aqui]`.</li>
+                            <li>Use a resposta da IA para preencher a Ficha de Avaliação oficial, garantindo uma análise padronizada e justificada por evidências.</li>
+                        </ul>
+                    </div>
+                    </div>
             </section>
             
             <section id="fase4" class="fade-in">
@@ -985,24 +1027,13 @@ Sua tarefa:
                         <li>
                             <strong>Pós-Entrevista:</strong>
                              <ul>
-                                <li>Preencha a "Ficha de Avaliação" <strong>imediatamente</strong>.</li>
+                                <li>Preencha a "Ficha de Avaliação" <strong>imediatamente</strong> (manual ou via IA - Fase 3).</li>
                                 <li>Compare as pontuações dos candidatos.</li>
                                 <li>Agende a Fase 4 (Teste Prático) com os aprovados.</li>
                             </ul>
                         </li>
                     </ul>
-                    <br>
-                    <h4>💼 TODOS PRONTOS PARA USAR HOJE</h4>
-                    <p>Cada documento está:</p>
-                    <ul>
-                        <li class="check-item">✅ Estruturado e pronto</li>
-                        <li class="check-item">✅ Com exemplos práticos</li>
-                        <li class="check-item">✅ Fácil de imprimir (use as Fichas)</li>
-                        <li class="check-item">✅ Customizado para a vaga</li>
-                    </ul>
-                    <br>
-                    <p><strong>Você tem em mãos um sistema profissional de seleção de talentos que pode começar a usar AGORA.</strong></p>
-                </div>
+                    </div>
             </section>
 
         </div>
